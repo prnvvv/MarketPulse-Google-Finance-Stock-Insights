@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-URL = f"https://www.moneycontrol.com/stocksmarketsindia/"
+URL = f"https://www.google.com/finance/markets/gainers"
 
 try:
     response = requests.get(URL)
@@ -11,13 +11,10 @@ except requests.exceptions.RequestException as e:
 
 soup = BeautifulSoup(response.text, "lxml")
 
-MostActiveStocks = soup.find("div", class_ = "title14_mh brd_bot").text
+CompanyNames = soup.find_all("div", class_ = "ZvmM7")
 
-tables = soup.find("table", class_ = "mctable1")
-
-name = tables.find("td", class_ = "tdred").find("a", class_ = "robo_medium").text
-
-print(name)
+for name in CompanyNames:
+    print(name.text)
 
 
 
