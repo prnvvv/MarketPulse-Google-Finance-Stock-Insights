@@ -1,3 +1,5 @@
+import numpy as np
+import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
@@ -11,11 +13,19 @@ except requests.exceptions.RequestException as e:
 
 soup = BeautifulSoup(response.text, "lxml")
 
-CompanyNames = soup.find_all("div", class_ = "ZvmM7")
+GainerCompanyNames = soup.find_all("div", class_ = "ZvmM7")
+GainerMarketValue = soup.find_all("div", class_ = "YMlKec")
 
-for name in CompanyNames:
-    print(name.text)
+GainerCompanyNames_List = []
+GainerMarketValue_List = []
+
+for name in GainerCompanyNames:
+    GainerCompanyNames_List.append(name.text)
+
+for money in GainerMarketValue[10: 10+len(GainerCompanyNames_List)]:
+    GainerMarketValue_List.append(money.text)
 
 
+df = pd.DataFrame({"Gainer Company Names": GainerCompanyNames_List, "Market Value": GainerMarketValue_List}, index = np.arange(1, len(GainerCompanyNames_List)+1))
 
-
+print(df)
