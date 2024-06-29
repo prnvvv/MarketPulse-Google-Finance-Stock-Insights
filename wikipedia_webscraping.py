@@ -1,10 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-'''word = input("Enter the Word to search: ")
-word = word.capitalize()'''
-
-URL = f"https://en.wikipedia.org/wiki/Engineering"
+URL = f"https://www.moneycontrol.com/stocksmarketsindia/"
 
 try:
     response = requests.get(URL)
@@ -14,9 +11,14 @@ except requests.exceptions.RequestException as e:
 
 soup = BeautifulSoup(response.text, "lxml")
 
-SearchName = soup.find("a", class_ = "mw-selflink selflink").text
+MostActiveStocks = soup.find("div", class_ = "title14_mh brd_bot").text
 
-DefinitionBlock = soup.find("blockquote", class_ = "templatequote")
+tables = soup.find("table", class_ = "mctable1")
 
-print(DefinitionBlock.find("p").text)
+name = tables.find("td", class_ = "tdred").find("a", class_ = "robo_medium").text
+
+print(name)
+
+
+
 
