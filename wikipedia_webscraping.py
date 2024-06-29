@@ -15,10 +15,11 @@ soup = BeautifulSoup(response.text, "lxml")
 
 GainerCompanyNames = soup.find_all("div", class_ = "ZvmM7")
 GainerMarketValue = soup.find_all("div", class_ = "YMlKec")
-GainerPercentage = soup.find_all("span", class_ = "V53LMb")
+GainerPercentage = soup.find_all("div", class_ = "JwB6zf")
 
 GainerCompanyNames_List = []
 GainerMarketValue_List = []
+GainerPercentage_List = []
 
 for name in GainerCompanyNames:
     GainerCompanyNames_List.append(name.text)
@@ -26,10 +27,10 @@ for name in GainerCompanyNames:
 for money in GainerMarketValue[10: 10+len(GainerCompanyNames_List)]:
     GainerMarketValue_List.append(money.text)
 
-for percentage in GainerPercentage:
-    print(percentage.text)
+for percentage in GainerPercentage[10: 10+len(GainerCompanyNames_List)]:
+    GainerPercentage_List.append(percentage.text)
 
 
-Gainers_DataFrame = pd.DataFrame({"Gainer Company Names": GainerCompanyNames_List, "Market Value": GainerMarketValue_List}, index = np.arange(1, len(GainerCompanyNames_List)+1))
+Gainers_DataFrame = pd.DataFrame({"Gainer Company Names": GainerCompanyNames_List, "Market Value": GainerMarketValue_List, "Increase Percentage": GainerPercentage_List}, index = np.arange(1, len(GainerCompanyNames_List)+1))
 
-
+print(Gainers_DataFrame)
