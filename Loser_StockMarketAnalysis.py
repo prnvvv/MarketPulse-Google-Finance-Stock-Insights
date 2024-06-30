@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-URL = f"https://www.google.com/finance/markets/gainers"
+URL = f"https://www.google.com/finance/markets/losers"
 
 try:
     response = requests.get(URL)
@@ -33,5 +33,5 @@ for percentage in LoserPercentage[10: 10+len(LoserCompanyNames_List)]:
 
 Losers_DataFrame = pd.DataFrame({"Gainer Company Names": LoserCompanyNames_List, "Market Value": LoserMarketValue_List, "Increase Percentage": LoserPercentage_List}, index = np.arange(1, len(LoserCompanyNames_List)+1))
 
-print(Gainers_DataFrame)
+print(Losers_DataFrame)
 
