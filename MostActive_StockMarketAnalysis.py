@@ -28,7 +28,8 @@ for money in MostActiveMarketValue[10: 10+len(MostActiveCompanyNames_List)]:
     MostActiveMarketValue_List.append(money.text)
 
 for percentage in MostActivePercentage:
-    print(percentage)
+    if percentage.class_ == "NydbP VOXKNe":
+        print("y")
 
 #MostActive_DataFrame = pd.DataFrame({"Gainer Company Names": MostActiveCompanyNames_List, "Market Value": MostActiveMarketValue_List, "Increase Percentage": MostActivePercentage_List}, index = np.arange(1, len(MostActiveCompanyNames_List)+1))
 
