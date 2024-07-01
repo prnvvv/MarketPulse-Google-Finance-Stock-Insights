@@ -15,7 +15,7 @@ soup = BeautifulSoup(response.text, "lxml")
 
 MostActiveCompanyNames = soup.find_all("div", class_ = "ZvmM7")
 MostActiveMarketValue = soup.find_all("div", class_ = "YMlKec")
-MostActivePercentage = soup.find_all("span", class_ = "xVyTdb NN5r3b ")
+MostActivePercentage = soup.find_all("div", class_ = "SxcTic ")
 
 MostActiveCompanyNames_List = []
 MostActiveMarketValue_List = []
@@ -28,10 +28,11 @@ for name in MostActiveCompanyNames:
 for money in MostActiveMarketValue[10: 10+len(MostActiveCompanyNames_List)]:
     MostActiveMarketValue_List.append(money.text)
 
-for percentage in MostActivePercentage:
-    print(percentage)
+for i in MostActivePercentage:
+    print(i)
 
 
-MostActive_DataFrame = pd.DataFrame({"Most Active Company Names": MostActiveCompanyNames_List, "Market Value": MostActiveMarketValue_List}, index = np.arange(1, len(MostActiveCompanyNames_List)+1))
 
-print(MostActive_DataFrame)
+#MostActive_DataFrame = pd.DataFrame({"Most Active Company Names": MostActiveCompanyNames_List, "Market Value": MostActiveMarketValue_List}, index = np.arange(1, len(MostActiveCompanyNames_List)+1))
+
+#print(MostActive_DataFrame)
