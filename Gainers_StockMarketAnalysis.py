@@ -34,3 +34,4 @@ for percentage in GainerPercentage[10: 10+len(GainerCompanyNames_List)]:
 Gainers_DataFrame = pd.DataFrame({"Gainer Company Names": GainerCompanyNames_List, "Market Value": GainerMarketValue_List, "Increase Percentage": GainerPercentage_List}, index = np.arange(1, len(GainerCompanyNames_List)+1))
 
 print(Gainers_DataFrame)
+
