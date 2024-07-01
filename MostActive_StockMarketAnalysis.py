@@ -36,6 +36,6 @@ for percentage in MostActivePercentage:
     print(percentage.find("span")["aria-label"])
 
 
-#MostActive_DataFrame = pd.DataFrame({"Gainer Company Names": MostActiveCompanyNames_List, "Market Value": MostActiveMarketValue_List, "Increase Percentage": MostActivePercentage_List}, index = np.arange(1, len(MostActiveCompanyNames_List)+1))
+MostActive_DataFrame = pd.DataFrame({"Gainer Company Names": MostActiveCompanyNames_List, "Market Value": MostActiveMarketValue_List, "Increase Percentage": MostActivePercentage_List}, index = np.arange(1, len(MostActiveCompanyNames_List)+1))
 
-
+print(MostActive_DataFrame)
