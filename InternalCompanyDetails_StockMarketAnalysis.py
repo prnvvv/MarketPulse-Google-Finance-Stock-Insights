@@ -10,6 +10,6 @@ except requests.exceptions.RequestException as e:
 
 soup2 = BeautifulSoup(response.text, "lxml")
    
-heading = soup2.find_all ("span", class_ = "P2Luy Ez2Ioe ZYVHBb")
+heading = soup2.find("div", class_ = "enJeMd")
 
-print(heading)
+print(heading) 
