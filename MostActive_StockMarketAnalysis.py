@@ -46,8 +46,9 @@ for i in MostActiveCompanyAbbr_List:
 
     soup2 = BeautifulSoup(response.text, "lxml")
 
-    ChangeValue = soup2.find("span", class_ = "P2Luy Ebnabc ZYVHBb")
+    ChangeValue = soup2.find_all("span", class_ = "P2Luy Ebnabc ZYVHBb")
 
-    print(ChangeValue.text)
+    for j in ChangeValue:
+        print(ChangeValue.text)
 
 
