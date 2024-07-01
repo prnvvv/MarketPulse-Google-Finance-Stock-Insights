@@ -32,11 +32,10 @@ ChangeValue = ["NydbP nZQ6l","NydbP VOXKNe"]
 
 MostActivePercentage = soup.find_all("span", class_ = "xVyTdb NN5r3b ")
 
+for percentage in MostActivePercentage:
+    print(percentage.find("span")["aria-label"])
+
 
 #MostActive_DataFrame = pd.DataFrame({"Gainer Company Names": MostActiveCompanyNames_List, "Market Value": MostActiveMarketValue_List, "Increase Percentage": MostActivePercentage_List}, index = np.arange(1, len(MostActiveCompanyNames_List)+1))
 
-MostActiveChangeValue_List = MostActiveChangeValue_List[10: 59]
-print(len(MostActiveChangeValue_List))
-print(len(MostActiveCompanyNames_List))
-print(len(MostActiveMarketValue_List))
 
