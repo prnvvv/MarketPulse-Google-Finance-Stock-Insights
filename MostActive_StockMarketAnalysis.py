@@ -34,7 +34,7 @@ for abbrnName in MostActiveCompanyAbbr[:len(MostActiveCompanyNames_List)]:
 
 MostActive_DataFrame = pd.DataFrame({"Most Active Company Names": MostActiveCompanyNames_List, "Market Value": MostActiveMarketValue_List}, index = np.arange(1, len(MostActiveCompanyNames_List)+1))
 
-print(MostActive_DataFrame)
+#print(MostActive_DataFrame)
 
 for i in MostActiveCompanyAbbr_List:
     NextPageURL = f"https://www.google.com/finance/quote/{i.upper()}:NSE"
@@ -45,6 +45,9 @@ for i in MostActiveCompanyAbbr_List:
         print(f"Error while fetching data fro {NextPageURL}.")
 
     soup2 = BeautifulSoup(response.text, "lxml")
-    
+
+    ChangeValue = soup2.find("span", class_ = "P2Luy Ebnabc ZYVHBb")
+
+    print(ChangeValue.text)
 
 
