@@ -15,7 +15,7 @@ soup = BeautifulSoup(response.text, "lxml")
 
 MostActiveCompanyNames = soup.find_all("div", class_ = "ZvmM7")
 MostActiveMarketValue = soup.find_all("div", class_ = "YMlKec")
-MostActivePercentage = soup.find_all("div", class_ = "SxcTic ")
+MostActivePercentage = soup.find_all("svg", class_ = " NMm5M")
 
 MostActiveCompanyNames_List = []
 MostActiveMarketValue_List = []
