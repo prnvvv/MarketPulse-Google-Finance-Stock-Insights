@@ -37,7 +37,14 @@ MostActive_DataFrame = pd.DataFrame({"Most Active Company Names": MostActiveComp
 print(MostActive_DataFrame)
 
 for i in MostActiveCompanyAbbr_List:
-    print(i.upper())
-    NextPageURL = f"https://www.google.com/finance/quote/{i.upper}:NSE"
+    NextPageURL = f"https://www.google.com/finance/quote/{i.upper()}:NSE"
+    try:
+        response = requests.get(NextPageURL)
+        response.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        print(f"Error while fetching data fro {NextPageURL}.")
+
+    soup2 = BeautifulSoup(response.text, "lxml")
+    
 
 
