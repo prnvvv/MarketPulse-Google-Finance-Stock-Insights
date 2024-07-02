@@ -29,18 +29,18 @@ for name in MostActiveCompanyNames:
 for money in MostActiveMarketValue[10: 10+len(MostActiveCompanyNames_List)]:
     MostActiveMarketValue_List.append(money.text)
 
-for colour in MostActiveCompanyChange[10: 10 + len(MostActiveCompanyNames_List)]:
+for colour in MostActiveCompanyChange:
     if colour["d"] ==  "M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z":
         MostActiveCompanyChange_List.append("Down By ")
     elif colour["d"] == "M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z":
         MostActiveCompanyChange_List.append("Up By ")
 
+MostActiveCompanyChange_List = MostActiveCompanyChange_List[10: 10 + len(MostActiveCompanyNames_List)]
+
 for i in range(len(MostActiveCompanyNames_List)):
     MostActiveMarketValue_List[i] = MostActiveCompanyChange_List[i] + MostActiveMarketValue_List[i]
 
-
-print(len(MostActiveMarketValue_List))
-print(len(MostActiveCompanyChange_List))
+print(MostActiveMarketValue_List)
 
 MostActive_DataFrame = pd.DataFrame({"Most Active Company Names": MostActiveCompanyNames_List, "Market Value": MostActiveMarketValue_List}, index = np.arange(1, len(MostActiveCompanyNames_List)+1))
 
