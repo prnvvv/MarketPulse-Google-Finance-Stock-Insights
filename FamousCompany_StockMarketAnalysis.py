@@ -12,3 +12,6 @@ except requests.exceptions.RequestException as e:
     print(f"Error fetching data from {URL} : {e}")
 
 soup = BeautifulSoup(response.text, "lxml")
+
+FamousCompanyNames = soup.find_all("div", class_ = "ZvmM7")
+FamousMarketValues = soup.find_all("div", class_ = "YMlKec")
