@@ -38,7 +38,7 @@ for colour in MostActiveCompanyChange:
 MostActiveCompanyChange_List = MostActiveCompanyChange_List[10: 10 + len(MostActiveCompanyNames_List)]
 
 for i in range(len(MostActiveCompanyNames_List)):
-    MostActiveMarketValue_List[i] = MostActiveCompanyChange_List[i] + MostActiveMarketValue_List[i]
+    MostActiveMarketValue_List[i] = MostActiveCompanyChange_List[i] + MostActivePercentage_List[i]
 
 print(MostActiveMarketValue_List)
 
