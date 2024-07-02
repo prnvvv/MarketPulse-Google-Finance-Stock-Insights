@@ -42,11 +42,9 @@ for colour in MostActiveCompanyChange:
 MostActiveCompanyChange_List = MostActiveCompanyChange_List[10: 10 + len(MostActiveCompanyNames_List)]
 
 for i in range(len(MostActiveCompanyNames_List)):
-    MostActiveMarketValue_List[i] = MostActiveCompanyChange_List[i] + MostActivePercentage_List[i]
+    MostActivePercentage_List[i] = MostActiveCompanyChange_List[i] + MostActivePercentage_List[i]
 
-print(MostActiveMarketValue_List)
+MostActive_DataFrame = pd.DataFrame({"Most Active Company Names": MostActiveCompanyNames_List, "Market Value": MostActiveMarketValue_List, "Market Value": MostActivePercentage_List}, index = np.arange(1, len(MostActiveCompanyNames_List)+1))
 
-MostActive_DataFrame = pd.DataFrame({"Most Active Company Names": MostActiveCompanyNames_List, "Market Value": MostActiveMarketValue_List}, index = np.arange(1, len(MostActiveCompanyNames_List)+1))
-
-
+print(MostActive_DataFrame)
 
