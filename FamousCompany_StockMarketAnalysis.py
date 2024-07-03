@@ -41,4 +41,6 @@ for percentage in FamousPercentages[10: 10 + len(FamousCompanyNames_List)]:
 for i in range(len(FamousCompanyNames_List)):
     FamousPercentages_List[i] = FamousChangeValues_List[i] + FamousPercentages_List[i]
 
-Famous_Dataframe = pd.DataFrame({"Company Names": FamousCompanyNames_List, "Market Value": FamousMarketValues_List, })
+Famous_Dataframe = pd.DataFrame({"Company Names": FamousCompanyNames_List, "Market Value": FamousMarketValues_List, "Change Percentage": FamousPercentages_List})
+
+print(Famous_Dataframe)
