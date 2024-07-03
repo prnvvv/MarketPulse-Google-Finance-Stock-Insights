@@ -33,4 +33,13 @@ for colour in MFGChangeValues:
     elif colour["d"] == "M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z":
         MFGChangeValues_List.append("Up By ")
 
-print(MFGChangeValues_List)
+MFGChangeValues_List = MFGChangeValues_List[16: 16 + len(MFGCompanyNames_List)]
+
+for i in range(len(MFGCompanyNames_List)):
+    MFGPercentages_List[i] = MFGChangeValues_List[i] + MFGPercentages_List[i]
+
+MFG_Dataframe = pd.DataFrame({"Company Names": MFGCompanyNames_List, "Change Percentages": MFGPercentages_List})
+
+print("Most Followed on Google")
+print()
+print(MFG_Dataframe)
