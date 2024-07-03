@@ -38,5 +38,7 @@ for money in FamousMarketValues[10: 10 + len(FamousCompanyNames_List)]:
 for percentage in FamousPercentages[10: 10 + len(FamousCompanyNames_List)]:
     FamousPercentages_List.append(percentage.text)
 
-print(FamousPercentages_List)
-print(FamousMarketValues_List)
+for i in range(len(FamousCompanyNames_List)):
+    FamousPercentages_List[i] = FamousChangeValues_List[i] + FamousPercentages_List[i]
+
+Famous_Dataframe = pd.DataFrame({"Company Names": FamousCompanyNames_List, "Market Value": FamousMarketValues_List, })
