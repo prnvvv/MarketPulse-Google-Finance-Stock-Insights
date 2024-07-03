@@ -26,7 +26,7 @@ FamousPercentages_List = []
 for name in FamousCompanyNames:
     FamousCompanyNames_List.append(name.text)
 
-for colour in FamousChangeValues:
+for colour in FamousChangeValues[10: 10 + len(FamousCompanyNames_List)]:
     if colour["d"] ==  "M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z":
         FamousChangeValues_List.append("Down By ")
     elif colour["d"] == "M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z":
