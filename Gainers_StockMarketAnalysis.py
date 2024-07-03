@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-import requests
+import requests 
 from bs4 import BeautifulSoup
 
 URL = f"https://www.google.com/finance/markets/gainers"
