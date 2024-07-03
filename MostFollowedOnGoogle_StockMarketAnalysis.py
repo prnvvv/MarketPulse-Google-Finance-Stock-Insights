@@ -15,7 +15,7 @@ soup = BeautifulSoup(response.text, "lxml")
 
 MFGCompanyNames = soup.find_all("div", class_ = "TwnKPb")
 MFGPercentages = soup.find_all("div", class_ = "JwB6zf")
-MFGChangeValues = soup.find_all("div", class_ = "path")
+MFGChangeValues = soup.find_all("path")
 
 MFGCompanyNames_List = []
 MFGPercentages_List = []
