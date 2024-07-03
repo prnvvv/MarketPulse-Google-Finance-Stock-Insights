@@ -32,6 +32,8 @@ for colour in FamousChangeValues:
     elif colour["d"] == "M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z":
         FamousChangeValues_List.append("Up By ")
 
+print(FamousChangeValues_List)
+
 for money in FamousMarketValues[10: 10 + len(FamousCompanyNames_List)]:
     FamousMarketValues_List.append(money.text)
 
@@ -43,4 +45,4 @@ for i in range(len(FamousCompanyNames_List)):
 
 Famous_Dataframe = pd.DataFrame({"Company Names": FamousCompanyNames_List, "Market Value": FamousMarketValues_List, "Change Percentage": FamousPercentages_List})
 
-print(Famous_Dataframe)
+#print(Famous_Dataframe)
