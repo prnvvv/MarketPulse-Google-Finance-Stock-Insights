@@ -41,13 +41,18 @@ GainerCompanyCode_List = GainerCompanyCode_List[:50]
 
 Gainers_DataFrame = pd.DataFrame({"Company Code": GainerCompanyCode_List, "Company Names": GainerCompanyNames_List, "Market Value": GainerMarketValues_List, "Increase Percentage": GainerPercentages_List}, index = np.arange(1, len(GainerCompanyNames_List)+1))
 
+print()
 print(Gainers_DataFrame)
+print()
 
-CompanyDetails = input("Do you want to look into any Company's stock details? (y/n): ")
+while True:
+    CompanyDetails = input("Do you want to look into any Company's stock details? (y/n): ")
 
-if CompanyDetails.lower() == 'y' or CompanyDetails.lower() == 'yes':
-    IndividualCompanyAnalysis()
-elif CompanyDetails.lower() == 'n' or CompanyDetails.lower() == 'no':
-    pass
-else:
-    print("Invalid Input")
+    if CompanyDetails.lower() == 'y' or CompanyDetails.lower() == 'yes':
+        IndividualCompanyAnalysis()
+    elif CompanyDetails.lower() == 'n' or CompanyDetails.lower() == 'no':
+        break
+    else:
+        print()
+        print("Invalid Input")
+        print()
