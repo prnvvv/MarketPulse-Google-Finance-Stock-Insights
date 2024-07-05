@@ -16,7 +16,7 @@ soup = BeautifulSoup(response.text, "lxml")
 Companyname = soup.find("div", class_ = "zzDege").text
 CompanyMarketValue = soup.find("div", class_ = "YMlKec fxKbKc").text
 CompanyPercentage = soup.find_all("div", class_ = "JwB6zf")
-Date = soup.find("div", class_ = "ygUjEc")
+Date = soup.find("div", class_ = "ygUjEc").text
 
 CompanyPercentage_List = []
 
