@@ -13,7 +13,12 @@ except requests.exceptions.RequestException as e:
 
 soup = BeautifulSoup(response.text, "lxml")
 
-Companyname = soup.find()
-CompanyMarketValue = soup.find("div", class_ = "YMlKec fxKbKc")
+Companyname = soup.find("div", class_ = "zzDege").text
+CompanyMarketValue = soup.find("div", class_ = "YMlKec fxKbKc").text
+CompanyPercentage = soup.find("div", class_ = "JwB6zf").text
+CompanyPercentageToday = soup.find("div", class_ = "enJeMd")
 
 
+print(Companyname)
+print(CompanyMarketValue)
+print(CompanyPercentageToday)
