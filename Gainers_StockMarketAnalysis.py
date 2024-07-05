@@ -51,6 +51,7 @@ while True:
     if CompanyDetails.lower() == 'y' or CompanyDetails.lower() == 'yes':
         IndividualCompanyAnalysis()
     elif CompanyDetails.lower() == 'n' or CompanyDetails.lower() == 'no':
+        print()
         break
     else:
         print()
