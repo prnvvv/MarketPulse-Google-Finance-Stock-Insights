@@ -15,12 +15,12 @@ soup = BeautifulSoup(response.text, "lxml")
 
 Companyname = soup.find("div", class_ = "zzDege").text
 CompanyMarketValue = soup.find("div", class_ = "YMlKec fxKbKc").text
-CompanyPercentage = soup.find_all("div", class_ = "JwB6zf").text
+CompanyPercentage = soup.find_all("div", class_ = "JwB6zf")
 Date = soup.find("div", class_ = "ygUjEc")
 
 print(Companyname)
 print(CompanyMarketValue)
 
 for percentage in CompanyPercentage:
-    print(CompanyPercentage)
+    print(CompanyPercentage.text)
 print(Date)
