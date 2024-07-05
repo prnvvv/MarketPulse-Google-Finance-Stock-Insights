@@ -17,9 +17,15 @@ Companyname = soup.find("div", class_ = "zzDege").text
 CompanyMarketValue = soup.find("div", class_ = "YMlKec fxKbKc").text
 CompanyPercentage = soup.find_all("div", class_ = "JwB6zf")
 Date = soup.find("div", class_ = "ygUjEc")
+
+CompanyPercentage_List = []
+
 print(Companyname)
 print(CompanyMarketValue)
 
 for percentage in CompanyPercentage:
-    print(percentage.text)
+    CompanyPercentage_List.append(percentage.text)
+CompanyPercentage = CompanyPercentage_List[19]
+
+print(CompanyPercentage)
 print(Date)
