@@ -32,5 +32,4 @@ def IndividualCompanyAnalysis():
     print()
 
     print(pd.Series([Companyname, CompanyMarketValue, CompanyPercentage], index = ["Company Name", "Market Value", "Percentage"]))
-
-IndividualCompanyAnalysis()
+    print()
