@@ -3,29 +3,32 @@ import pandas as pd
 import requests 
 from bs4 import BeautifulSoup
 
-URL = f"https://www.google.com/finance/quote/YESBANK:NSE"
+def IndividualCompanyAnalysis():
+    code = input("Enter the Company code: ")
 
-try:
-    response = requests.get(URL)
-    response.raise_for_status()
-except requests.exceptions.RequestException as e:
-    print(f"Error fetching data from {URL} : {e}")
+    URL = f"https://www.google.com/finance/quote/{code}:NSE"
 
-soup = BeautifulSoup(response.text, "lxml")
+    try:
+        response = requests.get(URL)
+        response.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching data from {URL} : {e}")
 
-Companyname = soup.find("div", class_ = "zzDege").text
-CompanyMarketValue = soup.find("div", class_ = "YMlKec fxKbKc").text
-CompanyPercentage = soup.find_all("div", class_ = "JwB6zf")
-Date = soup.find("div", class_ = "ygUjEc").text
+    soup = BeautifulSoup(response.text, "lxml")
 
-CompanyPercentage_List = []
+    Companyname = soup.find("div", class_ = "zzDege").text
+    CompanyMarketValue = soup.find("div", class_ = "YMlKec fxKbKc").text
+    CompanyPercentage = soup.find_all("div", class_ = "JwB6zf")
+    Date = soup.find("div", class_ = "ygUjEc").text
 
-print(Companyname)
-print(CompanyMarketValue)
+    CompanyPercentage_List = []
 
-for percentage in CompanyPercentage:
-    CompanyPercentage_List.append(percentage.text)
-CompanyPercentage = CompanyPercentage_List[19]
+    print(Companyname)
+    print(CompanyMarketValue)
 
-print(CompanyPercentage)
-print(Date)
+    for percentage in CompanyPercentage:
+        CompanyPercentage_List.append(percentage.text)
+    CompanyPercentage = CompanyPercentage_List[19]
+
+    print(CompanyPercentage)
+    print(Date)
