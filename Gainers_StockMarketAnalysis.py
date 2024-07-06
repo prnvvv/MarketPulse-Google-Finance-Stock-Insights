@@ -38,8 +38,9 @@ for codename in GainerCompanyCodes:
 
 GainerCompanyCodes_List = GainerCompanyCodes_List[:50]
 
-for i in range(len(GainerCompanyCodes_List)):
-    GainerCompanyCodes_List[i] = f"Up by {GainerCompanyCodes_List[i]}"
+for i in range(len(GainerCompanyNames_List)):
+    GainerPercentages_List[i] = f"Up by {GainerPercentages_List[i]}"
+
 
 Gainers_DataFrame = pd.DataFrame({"Company Code": GainerCompanyCodes_List, "Company Name": GainerCompanyNames_List, "Market Value": GainerMarketValues_List, "Change Percentage": GainerPercentages_List}, index = np.arange(1, len(GainerCompanyNames_List)+1))
 
