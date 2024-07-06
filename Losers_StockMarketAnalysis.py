@@ -42,7 +42,7 @@ LoserCompanyCodes_List = LoserCompanyCodes_List[:50]
 GainerCompanyCodes_List = LoserCompanyCodes_List[:50]
 
 for i in range(len(LoserCompanyNames_List)):
-    LoserPercentages_List[i] = f"Up by {LoserPercentages_List[i]}"
+    LoserPercentages_List[i] = f"Down by {LoserPercentages_List[i]}"
 
 Losers_DataFrame = pd.DataFrame({"Company Code": LoserCompanyCodes_List, "Company Name": LoserCompanyNames_List, "Market Value": LoserMarketValues_List, "Change Percentage": LoserPercentages_List}, index = np.arange(1, len(LoserCompanyNames_List)+1))
 
