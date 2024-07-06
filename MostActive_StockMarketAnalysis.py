@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+from IndividualComapnyAnalysis_StockMarketAnalysis import IndividualCompanyAnalysis
 
 URL = f"https://www.google.com/finance/markets/most-active"
 
@@ -17,11 +18,14 @@ MostActiveCompanyNames = soup.find_all("div", class_ = "ZvmM7")
 MostActiveMarketValues = soup.find_all("div", class_ = "YMlKec")
 MostActiveCompanyChanges = soup.find_all("path")
 MostActivePercentages = soup.find_all("div", class_ = "JwB6zf")
+MostActiveCompanyCodes = soup.find_all("div", class_ = "COaKTb")
+
 
 MostActiveCompanyNames_List = []
 MostActiveMarketValues_List = []
 MostActivePercentages_List = []
 MostActiveCompanyChanges_List = []
+MostActiveCompanyCodes_List = []
 
 
 for name in MostActiveCompanyNames:
@@ -32,6 +36,11 @@ for money in MostActiveMarketValues[10: 10 + len(MostActiveCompanyNames_List)]:
 
 for percentage in MostActivePercentages[10 : 10 + len(MostActiveCompanyNames_List)]:
     MostActivePercentages_List.append(percentage.text)
+
+for codename in MostActiveCompanyCodes:
+    MostActiveCompanyCodes_List.append(codename.text)
+
+MostActiveCompanyCodes_List = MostActiveCompanyCodes_List[:50]
 
 for colour in MostActiveCompanyChanges:
     if colour["d"] ==  "M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z":
