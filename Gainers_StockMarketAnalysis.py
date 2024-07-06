@@ -17,12 +17,12 @@ soup = BeautifulSoup(response.text, "lxml")
 GainerCompanyNames = soup.find_all("div", class_ = "ZvmM7")
 GainerMarketValues = soup.find_all("div", class_ = "YMlKec")
 GainerPercentages = soup.find_all("div", class_ = "JwB6zf")
-GainerCompanyCode = soup.find_all("div", class_ = "COaKTb")
+GainerCompanyCodes = soup.find_all("div", class_ = "COaKTb")
 
 GainerCompanyNames_List = []
 GainerMarketValues_List = []
 GainerPercentages_List = []
-GainerCompanyCode_List = []
+GainerCompanyCodes_List = []
 
 for name in GainerCompanyNames:
     GainerCompanyNames_List.append(name.text)
@@ -33,13 +33,15 @@ for money in GainerMarketValues[10: 10+len(GainerCompanyNames_List)]:
 for percentage in GainerPercentages[10: 10+len(GainerCompanyNames_List)]:
     GainerPercentages_List.append(percentage.text)
 
-for codename in GainerCompanyCode:
-    GainerCompanyCode_List.append(codename.text)
+for codename in GainerCompanyCodes:
+    GainerCompanyCodes_List.append(codename.text)
 
-GainerCompanyCode_List = GainerCompanyCode_List[:50]
+GainerCompanyCodes_List = GainerCompanyCodes_List[:50]
 
+for i in len(GainerCompanyCodes_List):
+    GainerCompanyCodes_List[i] = f"Up by {GainerCompanyCodes_List[i]}"
 
-Gainers_DataFrame = pd.DataFrame({"Company Code": GainerCompanyCode_List, "Company Names": GainerCompanyNames_List, "Market Value": GainerMarketValues_List, "Increase Percentage": GainerPercentages_List}, index = np.arange(1, len(GainerCompanyNames_List)+1))
+Gainers_DataFrame = pd.DataFrame({"Company Code": GainerCompanyCodes_List, "Company Name": GainerCompanyNames_List, "Market Value": GainerMarketValues_List, "Change Percentage": GainerPercentages_List}, index = np.arange(1, len(GainerCompanyNames_List)+1))
 
 print()
 print(Gainers_DataFrame)
