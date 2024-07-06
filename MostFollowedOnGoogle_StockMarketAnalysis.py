@@ -40,6 +40,8 @@ for i in range(len(MFGCompanyNames_List)):
 
 MFG_Dataframe = pd.DataFrame({"Company Names": MFGCompanyNames_List, "Change Percentages": MFGPercentages_List})
 
+print()
 print("Most Followed on Google")
 print()
 print(MFG_Dataframe)
+print()
