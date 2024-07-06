@@ -17,10 +17,13 @@ soup = BeautifulSoup(response.text, "lxml")
 LoserCompanyNames = soup.find_all("div", class_ = "ZvmM7")
 LoserMarketValue = soup.find_all("div", class_ = "YMlKec")
 LoserPercentage = soup.find_all("div", class_ = "JwB6zf")
+LoserCompanyCode = soup.find_all("div", class_ = "COaKTb")
 
 LoserCompanyNames_List = []
 LoserMarketValue_List = []
 LoserPercentage_List = []
+LoserCompanyCodes_List = []
+
 
 for name in LoserCompanyNames:
     LoserCompanyNames_List.append(name.text)
@@ -30,6 +33,16 @@ for money in LoserMarketValue[10: 10+len(LoserCompanyNames_List)]:
 
 for percentage in LoserPercentage[10: 10+len(LoserCompanyNames_List)]:
     LoserPercentage_List.append(percentage.text)
+
+for codename in LoserCompanyCode:
+    LoserCompanyCodes_List.append(codename.text)
+
+LoserCompanyCodes_List = LoserCompanyCodes_List[:50]
+
+GainerCompanyCodes_List = LoserCompanyCodes_List[:50]
+
+for i in range(len(LoserCompanyNames_List)):
+    LoserPercentages_List[i] = f"Up by {Loserercentages_List[i]}"
 
 Losers_DataFrame = pd.DataFrame({"Gainer Company Names": LoserCompanyNames_List, "Market Value": LoserMarketValue_List, "Increase Percentage": LoserPercentage_List}, index = np.arange(1, len(LoserCompanyNames_List)+1))
 
