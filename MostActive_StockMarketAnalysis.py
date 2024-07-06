@@ -16,7 +16,7 @@ soup = BeautifulSoup(response.text, "lxml")
 MostActiveCompanyNames = soup.find_all("div", class_ = "ZvmM7")
 MostActiveMarketValues = soup.find_all("div", class_ = "YMlKec")
 MostActiveCompanyChanges = soup.find_all("path")
-MostActivePercentage = soup.find_all("div", class_ = "JwB6zf")
+MostActivePercentages = soup.find_all("div", class_ = "JwB6zf")
 
 MostActiveCompanyNames_List = []
 MostActiveMarketValue_List = []
@@ -30,7 +30,7 @@ for name in MostActiveCompanyNames:
 for money in MostActiveMarketValues[10: 10 + len(MostActiveCompanyNames_List)]:
     MostActiveMarketValue_List.append(money.text)
 
-for percentage in MostActivePercentage[10 : 10 + len(MostActiveCompanyNames_List)]:
+for percentage in MostActivePercentages[10 : 10 + len(MostActiveCompanyNames_List)]:
     MostActivePercentage_List.append(percentage.text)
 
 for colour in MostActiveCompanyChanges:
