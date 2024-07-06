@@ -15,26 +15,26 @@ except requests.exceptions.RequestException as e:
 soup = BeautifulSoup(response.text, "lxml")
 
 LoserCompanyNames = soup.find_all("div", class_ = "ZvmM7")
-LoserMarketValue = soup.find_all("div", class_ = "YMlKec")
-LoserPercentage = soup.find_all("div", class_ = "JwB6zf")
-LoserCompanyCode = soup.find_all("div", class_ = "COaKTb")
+LoserMarketValues = soup.find_all("div", class_ = "YMlKec")
+LoserPercentages = soup.find_all("div", class_ = "JwB6zf")
+LoserCompanyCodes = soup.find_all("div", class_ = "COaKTb")
 
 LoserCompanyNames_List = []
-LoserMarketValue_List = []
-LoserPercentage_List = []
+LoserMarketValues_List = []
+LoserPercentages_List = []
 LoserCompanyCodes_List = []
 
 
 for name in LoserCompanyNames:
     LoserCompanyNames_List.append(name.text)
 
-for money in LoserMarketValue[10: 10+len(LoserCompanyNames_List)]:
-    LoserMarketValue_List.append(money.text)
+for money in LoserMarketValues[10: 10+len(LoserCompanyNames_List)]:
+    LoserMarketValues_List.append(money.text)
 
-for percentage in LoserPercentage[10: 10+len(LoserCompanyNames_List)]:
-    LoserPercentage_List.append(percentage.text)
+for percentage in LoserPercentages[10: 10+len(LoserCompanyNames_List)]:
+    LoserPercentages_List.append(percentage.text)
 
-for codename in LoserCompanyCode:
+for codename in LoserCompanyCodes:
     LoserCompanyCodes_List.append(codename.text)
 
 LoserCompanyCodes_List = LoserCompanyCodes_List[:50]
@@ -42,9 +42,9 @@ LoserCompanyCodes_List = LoserCompanyCodes_List[:50]
 GainerCompanyCodes_List = LoserCompanyCodes_List[:50]
 
 for i in range(len(LoserCompanyNames_List)):
-    LoserPercentages_List[i] = f"Up by {Loserercentages_List[i]}"
+    LoserPercentages_List[i] = f"Up by {LoserPercentages_List[i]}"
 
-Losers_DataFrame = pd.DataFrame({"Gainer Company Names": LoserCompanyNames_List, "Market Value": LoserMarketValue_List, "Increase Percentage": LoserPercentage_List}, index = np.arange(1, len(LoserCompanyNames_List)+1))
+Losers_DataFrame = pd.DataFrame({"Company Code": LoserCompanyCodes_List, "Company Name": LoserCompanyNames_List, "Market Value": LoserMarketValues_List, "Change Percentage": LoserPercentages_List}, index = np.arange(1, len(LoserCompanyNames_List)+1))
 
 print()
 print(Losers_DataFrame)
