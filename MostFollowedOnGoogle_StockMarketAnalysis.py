@@ -33,9 +33,7 @@ for percentage in MFGPercentages[16: 16 + len(MFGCompanyNames_List)]:
 for codename in MFGCompanyCodes:
     MFGCompanyCodes_List.append(codename.text)
 
-print(MFGCompanyCodes_List)
-print(MFGCompanyNames_List)
-#MFGCompanyCodes_List = MFGCompanyCodes_List[:50]
+MFGCompanyCodes_List = MFGCompanyCodes_List[6: 12]
 
 for colour in MFGChangeValues:
     if colour["d"] ==  "M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z":
@@ -48,12 +46,12 @@ MFGChangeValues_List = MFGChangeValues_List[16: 16 + len(MFGCompanyNames_List)]
 for i in range(len(MFGCompanyNames_List)):
     MFGPercentages_List[i] = MFGChangeValues_List[i] + MFGPercentages_List[i]
 
-#MFG_Dataframe = pd.DataFrame({"Company Code": MFGCompanyCodes_List,"Company Names": MFGCompanyNames_List, "Change Percentages": MFGPercentages_List})
+MFG_Dataframe = pd.DataFrame({"Company Code": MFGCompanyCodes_List,"Company Names": MFGCompanyNames_List, "Change Percentages": MFGPercentages_List})
 
 print()
 print("Most Followed on Google")
 print()
-#print(MFG_Dataframe)
+print(MFG_Dataframe)
 print()
 '''
 while True:
