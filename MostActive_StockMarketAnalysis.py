@@ -53,7 +53,7 @@ MostActiveCompanyChanges_List = MostActiveCompanyChanges_List[10: 10 + len(MostA
 for i in range(len(MostActiveCompanyNames_List)):
     MostActivePercentages_List[i] = MostActiveCompanyChanges_List[i] + MostActivePercentages_List[i]
 
-MostActive_DataFrame = pd.DataFrame({"Most Active Company Names": MostActiveCompanyNames_List, "Market Value": MostActiveMarketValues_List, "Change Percentage": MostActivePercentages_List}, index = np.arange(1, len(MostActiveCompanyNames_List)+1))
+MostActive_DataFrame = pd.DataFrame({"Company Code": MostActiveCompanyCodes_List,"Company Name": MostActiveCompanyNames_List, "Market Value": MostActiveMarketValues_List, "Change Percentage": MostActivePercentages_List}, index = np.arange(1, len(MostActiveCompanyNames_List)+1))
 
 print()
 print(MostActive_DataFrame)
