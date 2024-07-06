@@ -46,14 +46,14 @@ MFGChangeValues_List = MFGChangeValues_List[16: 16 + len(MFGCompanyNames_List)]
 for i in range(len(MFGCompanyNames_List)):
     MFGPercentages_List[i] = MFGChangeValues_List[i] + MFGPercentages_List[i]
 
-MFG_Dataframe = pd.DataFrame({"Company Code": MFGCompanyCodes_List,"Company Names": MFGCompanyNames_List, "Change Percentages": MFGPercentages_List})
+MFG_Dataframe = pd.DataFrame({"Company Code": MFGCompanyCodes_List, "Company Name": MFGCompanyNames_List, "Change Percentage": MFGPercentages_List})
 
 print()
 print("Most Followed on Google")
 print()
 print(MFG_Dataframe)
 print()
-'''
+
 while True:
     CompanyDetails = input("Do you want to look into any Company's stock details? (y/n): ")
 
@@ -65,4 +65,4 @@ while True:
     else:
         print()
         print("Invalid Input")
-        print()'''
+        print()
