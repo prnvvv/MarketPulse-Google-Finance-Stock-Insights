@@ -47,6 +47,8 @@ for i in range(len(LoserCompanyNames_List)):
 Losers_DataFrame = pd.DataFrame({"Company Code": LoserCompanyCodes_List, "Company Name": LoserCompanyNames_List, "Market Value": LoserMarketValues_List, "Change Percentage": LoserPercentages_List}, index = np.arange(1, len(LoserCompanyNames_List)+1))
 
 print()
+print("LOSERS")
+print()
 print(Losers_DataFrame)
 print()
 
