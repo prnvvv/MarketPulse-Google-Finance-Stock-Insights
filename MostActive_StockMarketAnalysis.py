@@ -46,5 +46,7 @@ for i in range(len(MostActiveCompanyNames_List)):
 
 MostActive_DataFrame = pd.DataFrame({"Most Active Company Names": MostActiveCompanyNames_List, "Market Value": MostActiveMarketValues_List, "Change Percentage": MostActivePercentages_List}, index = np.arange(1, len(MostActiveCompanyNames_List)+1))
 
+print()
 print(MostActive_DataFrame)
+print()
 
