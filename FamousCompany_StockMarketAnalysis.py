@@ -23,6 +23,7 @@ FamousCompanyNames_List = []
 FamousChangeValues_List = []
 FamousMarketValues_List = []
 FamousPercentages_List = []
+FamousCompanyCodes_List = []
 
 for name in FamousCompanyNames:
     FamousCompanyNames_List.append(name.text)
