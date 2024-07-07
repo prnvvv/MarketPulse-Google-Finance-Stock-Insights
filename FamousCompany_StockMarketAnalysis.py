@@ -17,6 +17,7 @@ FamousCompanyNames = soup.find_all("div", class_ = "ZvmM7")
 FamousMarketValues = soup.find_all("div", class_ = "YMlKec")
 FamousPercentages = soup.find_all("div", class_ = "JwB6zf")
 FamousChangeValues = soup.find_all("path")
+FamousCompanyCodes = soup.find_all("div", class_ = "COaKTb")
 
 FamousCompanyNames_List = []
 FamousChangeValues_List = []
