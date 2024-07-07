@@ -40,6 +40,9 @@ for money in FamousMarketValues[10: 10 + len(FamousCompanyNames_List)]:
 for percentage in FamousPercentages[10: 10 + len(FamousCompanyNames_List)]:
     FamousPercentages_List.append(percentage.text)
 
+for codename in FamousCompanyCodes:
+    FamousCompanyCodes_List.append(codename.text)
+
 FamousChangeValues_List = FamousChangeValues_List[10: 10 + len(FamousCompanyNames_List)]
 
 for i in range(len(FamousCompanyNames_List)):
