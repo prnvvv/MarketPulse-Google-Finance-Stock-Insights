@@ -43,6 +43,8 @@ for percentage in FamousPercentages[10: 10 + len(FamousCompanyNames_List)]:
 for codename in FamousCompanyCodes:
     FamousCompanyCodes_List.append(codename.text)
 
+print(FamousCompanyCodes_List)
+
 FamousChangeValues_List = FamousChangeValues_List[10: 10 + len(FamousCompanyNames_List)]
 
 for i in range(len(FamousCompanyNames_List)):
