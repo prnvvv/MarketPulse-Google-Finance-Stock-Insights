@@ -45,14 +45,12 @@ for codename in FamousCompanyCodes:
 
 FamousCompanyCodes_List = FamousCompanyCodes_List[:6]
 
-print(FamousCompanyCodes_List)
-
 FamousChangeValues_List = FamousChangeValues_List[10: 10 + len(FamousCompanyNames_List)]
 
 for i in range(len(FamousCompanyNames_List)):
     FamousPercentages_List[i] = FamousChangeValues_List[i] + FamousPercentages_List[i]
 
-Famous_Dataframe = pd.DataFrame({"Company Names": FamousCompanyNames_List, "Market Value": FamousMarketValues_List, "Change Percentage": FamousPercentages_List})
+Famous_Dataframe = pd.DataFrame({"Company Name": FamousCompanyNames_List, "Market Value": FamousMarketValues_List, "Change Percentage": FamousPercentages_List})
 
 print("You maybe interested in...")
 print()
