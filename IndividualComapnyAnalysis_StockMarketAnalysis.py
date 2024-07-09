@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 
 def IndividualCompanyAnalysis():
+
     code = input("Enter the Company code: ")
 
     URL = f"https://www.google.com/finance/quote/{code.upper()}:NSE"
@@ -33,3 +34,17 @@ def IndividualCompanyAnalysis():
 
     print(pd.Series([Companyname, CompanyMarketValue, CompanyPercentage], index = ["Company Name", "Market Value", "Percentage"]))
     print()
+
+
+while True:
+        CompanyDetails = input("Do you want to look into any Company's stock details? (y/n): ")
+
+        if CompanyDetails.lower() == 'y' or CompanyDetails.lower() == 'yes':
+            IndividualCompanyAnalysis()
+        elif CompanyDetails.lower() == 'n' or CompanyDetails.lower() == 'no':
+            print()
+            break
+        else:
+            print()
+            print("Invalid Input")
+            print()
