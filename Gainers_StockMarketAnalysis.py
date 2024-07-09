@@ -4,7 +4,8 @@ import requests
 from bs4 import BeautifulSoup
 from IndividualComapnyAnalysis_StockMarketAnalysis import IndividualCompanyAnalysis
 
-URL = f"https://www.google.com/finance/markets/gainers"
+def Gainers():
+    URL = f"https://www.google.com/finance/markets/gainers"
 
 try:
     response = requests.get(URL)
