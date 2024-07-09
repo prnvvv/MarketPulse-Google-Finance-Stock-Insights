@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 from IndividualComapnyAnalysis_StockMarketAnalysis import IndividualCompanyAnalysis
 
 def Gainers():
+
     URL = f"https://www.google.com/finance/markets/gainers"
 
     try:
@@ -63,3 +64,5 @@ def Gainers():
             print()
             print("Invalid Input")
             print()
+
+Gainers()
