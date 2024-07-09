@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
-from IndividualComapnyAnalysis_StockMarketAnalysis import IndividualCompanyAnalysis
 
 def Losers():
     URL = f"https://www.google.com/finance/markets/losers"
@@ -52,17 +51,4 @@ def Losers():
     print()
     print(Losers_DataFrame)
     print()
-
-    while True:
-        CompanyDetails = input("Do you want to look into any Company's stock details? (y/n): ")
-
-        if CompanyDetails.lower() == 'y' or CompanyDetails.lower() == 'yes':
-            IndividualCompanyAnalysis()
-        elif CompanyDetails.lower() == 'n' or CompanyDetails.lower() == 'no':
-            print()
-            break
-        else:
-            print()
-            print("Invalid Input")
-            print()
 
