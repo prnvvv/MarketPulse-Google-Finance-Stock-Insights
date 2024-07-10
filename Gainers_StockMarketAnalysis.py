@@ -45,10 +45,6 @@ def Gainers():
 
     Gainers_DataFrame = pd.DataFrame({"Company Code": GainerCompanyCodes_List, "Company Name": GainerCompanyNames_List, "Market Value": GainerMarketValues_List, "Change Percentage": GainerPercentages_List}, index = np.arange(1, len(GainerCompanyNames_List)+1))
 
-    print()
-    print("GAINERS")
-    print()
-    print(Gainers_DataFrame)
-    print()
+    return Gainers_DataFrame
 
     
