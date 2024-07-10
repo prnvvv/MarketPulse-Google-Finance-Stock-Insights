@@ -23,7 +23,7 @@ print("3. MOST ACTIVE")
 print("4. FAMOUS COMPANIES ON GOOGLE")
 print()
 
-option = input("Enter your option: ")
+option = int(input("Enter your option: "))
 
 if option == 1:
     print()
