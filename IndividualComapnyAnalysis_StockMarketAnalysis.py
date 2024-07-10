@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 
 def IndividualCompanyAnalysis():
-
+    print()
     code = input("Enter the Company code: ")
 
     URL = f"https://www.google.com/finance/quote/{code.upper()}:NSE"
