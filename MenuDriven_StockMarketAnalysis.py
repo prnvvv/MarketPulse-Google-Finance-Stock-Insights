@@ -52,6 +52,15 @@ def main():
 
     else:
         print("Invalid option. Please enter a number between 1 and 4.")
+    
+    while True:
+        user_input = input("Do you want to look into any company's stock details? (y/n): ").strip().lower()
+        if user_input == 'y':
+            IndividualCompanyAnalysis()
+        elif user_input == 'n':
+            break
+        else:
+            print("Invalid input. Please enter 'y' or 'n'.")
 
 if __name__ == "__main__":
     main()
