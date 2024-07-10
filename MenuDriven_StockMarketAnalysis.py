@@ -54,7 +54,7 @@ def main():
         print("Invalid option. Please enter a number between 1 and 4.")
     
     while True:
-        user_input = input("Do you want to look into any company's stock details? (y/n): ").strip().lower()
+        user_input = input("Do you want to look into any company's stock details? (y/n): ")
         if user_input == 'y':
             IndividualCompanyAnalysis()
         elif user_input == 'n':
