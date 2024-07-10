@@ -4,31 +4,43 @@ from Losers_StockMarketAnalysis import Losers
 from MostActive_StockMarketAnalysis import MostActive
 from FamousCompanies_StockMarketAnalysis import FamousCompanies
 
-print()
-print("STOCK ANALYSIS WITH GOOGLE FINANCE")
-print()
+def main():
+    print("\nSTOCK ANALYSIS WITH GOOGLE FINANCE\n")
 
-print()
-print("MOST FOLLOWED COMPANIES ON GOOGLE")
-print()
-MostFollowedOnGoogle()
-print()
-
-print()
-print("MENU")
-print()
-print("1. GAINERS")
-print("2. LOSERS")
-print("3. MOST ACTIVE")
-print("4. FAMOUS COMPANIES ON GOOGLE")
-print()
-
-option = int(input("Enter your option: "))
-
-if option == 1:
+    print("\nMOST FOLLOWED COMPANIES ON GOOGLE\n")
+    MostFollowedOnGoogle()
     print()
-    print("GAINERS")
-    print()
-    Gainers_Dataframe = Gainers()
-    print(Gainers_Dataframe)
 
+    print("\nMENU\n")
+    print("1. GAINERS")
+    print("2. LOSERS")
+    print("3. MOST ACTIVE")
+    print("4. FAMOUS COMPANIES ON GOOGLE\n")
+
+    try:
+        option = int(input("Enter your option: "))
+    except ValueError:
+        print("Invalid input. Please enter a number between 1 and 4.")
+        return
+
+    if option == 1:
+        print("\nGAINERS\n")
+        Gainers_Dataframe = Gainers()
+        print(Gainers_Dataframe)
+    elif option == 2:
+        print("\nLOSERS\n")
+        Losers_Dataframe = Losers()
+        print(Losers_Dataframe)
+    elif option == 3:
+        print("\nMOST ACTIVE\n")
+        MostActive_Dataframe = MostActive()
+        print(MostActive_Dataframe)
+    elif option == 4:
+        print("\nFAMOUS COMPANIES ON GOOGLE\n")
+        FamousCompanies_Dataframe = FamousCompanies()
+        print(FamousCompanies_Dataframe)
+    else:
+        print("Invalid option. Please enter a number between 1 and 4.")
+
+if __name__ == "__main__":
+    main()
