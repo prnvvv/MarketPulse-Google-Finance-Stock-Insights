@@ -8,16 +8,12 @@ from IndividualComapnyAnalysis_StockMarketAnalysis import IndividualCompanyAnaly
 def main():
     print("\nSTOCK ANALYSIS WITH GOOGLE FINANCE\n")
 
-    # Display most followed companies on Google
     print("\nMOST FOLLOWED COMPANIES ON GOOGLE\n")
     MostFollowedOnGoogle()
     print()
-
-    # Perform individual company analysis
     IndividualCompanyAnalysis()
     print()
 
-    # Display the menu
     print("\nMENU\n")
     print("1. GAINERS")
     print("2. LOSERS")
@@ -32,26 +28,26 @@ def main():
 
     if option == 1:
         print("\nGAINERS\n")
-        gainers_df = Gainers()
-        print(gainers_df)
+        Gainers_Dataframe = Gainers()
+        print(Gainers_Dataframe)
         IndividualCompanyAnalysis()
 
     elif option == 2:
         print("\nLOSERS\n")
-        losers_df = Losers()
-        print(losers_df)
+        Losers_Dataframe = Losers()
+        print(Losers_Dataframe)
         IndividualCompanyAnalysis()
 
     elif option == 3:
         print("\nMOST ACTIVE\n")
-        most_active_df = MostActive()
-        print(most_active_df)
+        MostActive_Dataframe = MostActive()
+        print(MostActive_Dataframe)
         IndividualCompanyAnalysis()
 
     elif option == 4:
         print("\nFAMOUS COMPANIES ON GOOGLE\n")
-        famous_companies_df = FamousCompanies()
-        print(famous_companies_df)
+        FamousCompanies_Dataframe = FamousCompanies()
+        print(FamousCompanies_Dataframe)
         IndividualCompanyAnalysis()
 
     else:
