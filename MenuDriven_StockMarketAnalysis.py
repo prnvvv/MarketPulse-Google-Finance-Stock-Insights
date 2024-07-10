@@ -20,4 +20,6 @@ print("3. MOST ACTIVE")
 print("4. FAMOUS COMPANIES ON GOOGLE")
 print()
 
+option = input("Enter your option: ")
+
 
