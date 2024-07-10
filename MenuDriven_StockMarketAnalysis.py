@@ -26,5 +26,8 @@ print()
 option = input("Enter your option: ")
 
 if option == 1:
+    print()
+    print("GAINERS")
+    print()
     Gainers()
 
