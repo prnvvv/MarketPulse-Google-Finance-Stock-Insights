@@ -1,5 +1,8 @@
 from MostFollowedOnGoogle_StockMarketAnalysis import MostFollowedOnGoogle
-
+from Gainers_StockMarketAnalysis import Gainers
+from Losers_StockMarketAnalysis import Losers
+from MostActive_StockMarketAnalysis import MostActive
+from FamousCompanies_StockMarketAnalysis import FamousCompanies
 
 print()
 print("STOCK ANALYSIS WITH GOOGLE FINANCE")
@@ -22,4 +25,6 @@ print()
 
 option = input("Enter your option: ")
 
+if option == 1:
+    Gainers()
 
