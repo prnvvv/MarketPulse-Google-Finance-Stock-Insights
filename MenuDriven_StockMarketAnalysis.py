@@ -3,12 +3,15 @@ from Gainers_StockMarketAnalysis import Gainers
 from Losers_StockMarketAnalysis import Losers
 from MostActive_StockMarketAnalysis import MostActive
 from FamousCompanies_StockMarketAnalysis import FamousCompanies
+from IndividualComapnyAnalysis_StockMarketAnalysis import IndividualCompanyAnalysis
 
 def main():
     print("\nSTOCK ANALYSIS WITH GOOGLE FINANCE\n")
 
     print("\nMOST FOLLOWED COMPANIES ON GOOGLE\n")
     MostFollowedOnGoogle()
+    print()
+    IndividualCompanyAnalysis()
     print()
 
     print("\nMENU\n")
@@ -27,18 +30,26 @@ def main():
         print("\nGAINERS\n")
         Gainers_Dataframe = Gainers()
         print(Gainers_Dataframe)
+        IndividualCompanyAnalysis()
+
     elif option == 2:
         print("\nLOSERS\n")
         Losers_Dataframe = Losers()
         print(Losers_Dataframe)
+        IndividualCompanyAnalysis()
+
     elif option == 3:
         print("\nMOST ACTIVE\n")
         MostActive_Dataframe = MostActive()
         print(MostActive_Dataframe)
+        IndividualCompanyAnalysis()
+
     elif option == 4:
         print("\nFAMOUS COMPANIES ON GOOGLE\n")
         FamousCompanies_Dataframe = FamousCompanies()
         print(FamousCompanies_Dataframe)
+        IndividualCompanyAnalysis()
+
     else:
         print("Invalid option. Please enter a number between 1 and 4.")
 
