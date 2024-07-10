@@ -29,5 +29,6 @@ if option == 1:
     print()
     print("GAINERS")
     print()
-    Gainers()
+    Gainers_Dataframe = Gainers()
+    print(Gainers_Dataframe)
 
