@@ -55,9 +55,9 @@ def main():
     
     while True:
         user_input = input("Do you want to look into any company's stock details? (y/n): ")
-        if user_input == 'y':
+        if user_input.lower() == 'y':
             IndividualCompanyAnalysis()
-        elif user_input == 'n':
+        elif user_input.lower() == 'n':
             break
         else:
             print("Invalid input. Please enter 'y' or 'n'.")
