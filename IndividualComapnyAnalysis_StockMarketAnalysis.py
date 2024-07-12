@@ -30,9 +30,10 @@ def IndividualCompanyAnalysis():
         CompanyPercentage_List.append(percentage.text)
     CompanyPercentage = CompanyPercentage_List[19]
 
+    IndividualCompanyAnalysis_Dataframe = pd.Series([Companyname, CompanyMarketValue, CompanyPercentage], index = ["Company Name", "Market Value", "Percentage"])
     # Printing the extracted information
     print()
     print(Date)
     print()
-    print(pd.Series([Companyname, CompanyMarketValue, CompanyPercentage], index = ["Company Name", "Market Value", "Percentage"]))
-    print()
+    
+    return IndividualCompanyAnalysis_Dataframe
