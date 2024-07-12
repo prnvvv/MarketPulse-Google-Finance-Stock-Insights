@@ -61,5 +61,8 @@ def MostActive():
 
     # Printing the DataFrame
     print()
-    print(MostActive_DataFrame)
+    print("MOST ACTIVE COMPANIES")
     print()
+    
+    return MostActive_DataFrame
+    
