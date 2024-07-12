@@ -55,7 +55,7 @@ def MostFollowedOnGoogle():
 
     # Printing the DataFrame
     print()
-    print("Most Followed on Google")
+    print("MOST FOLLOWED ON GOOGLE")
     print()
     
     return MFG_Dataframe
