@@ -56,5 +56,6 @@ def Losers():
     print()
     print("LOSERS")
     print()
-    print(Losers_DataFrame)
-    print()
+    
+    return Losers_DataFrame
+
