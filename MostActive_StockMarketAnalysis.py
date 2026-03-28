@@ -15,7 +15,7 @@ def MostActive():
         return None
 
     
-    +eautifulSoup(response.text, "lxml")
+    soup = BeautifulSoup(response.text, "lxml")
 
     # Extracting data from specific classes in the HTML
     MostActiveCompanyNames = soup.find_all("div", class_ = "ZvmM7")
