@@ -15,14 +15,21 @@ def IndividualCompanyAnalysis():
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
         print(f"Error fetching data from {URL} : {e}")
+        return None
 
     soup = BeautifulSoup(response.text, "lxml")
 
     # Extracting specific data from the HTML
-    Companyname = soup.find("div", class_ = "zzDege").text
-    CompanyMarketValue = soup.find("div", class_ = "YMlKec fxKbKc").text
+    company_name_element = soup.find("div", class_ = "zzDege")
+    Companyname = company_name_element.text if company_name_element else "N/A"
+    
+    company_value_element = soup.find("div", class_ = "YMlKec fxKbKc")
+    CompanyMarketValue = company_value_element.text if company_value_element else "N/A"
+    
     CompanyPercentage = soup.find_all("div", class_ = "JwB6zf")
-    Date = soup.find("div", class_ = "ygUjEc").text
+    
+    date_element = soup.find("div", class_ = "ygUjEc")
+    Date = date_element.text if date_element else "N/A"
 
     # Extracting and formatting percentage change
     CompanyPercentage_List = []

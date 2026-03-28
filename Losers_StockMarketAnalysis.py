@@ -11,6 +11,7 @@ def Losers():
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
         print(f"Error fetching data from {URL}: {e}")
+        return None
 
     soup = BeautifulSoup(response.text, "lxml")
 

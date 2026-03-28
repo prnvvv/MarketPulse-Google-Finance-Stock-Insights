@@ -12,8 +12,10 @@ def MostActive():
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
         print(f"Error fetching data from {URL}.")
+        return None
 
-    soup = BeautifulSoup(response.text, "lxml")
+    
+    +eautifulSoup(response.text, "lxml")
 
     # Extracting data from specific classes in the HTML
     MostActiveCompanyNames = soup.find_all("div", class_ = "ZvmM7")
